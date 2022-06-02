@@ -1,24 +1,26 @@
 import React from "react";
-import {View, Text,StyleSheet} from "react-native";
-import {string, shape} from "prop-types";
+import {Text,StyleSheet, TouchableOpacity} from "react-native";
+import {string, shape, func} from "prop-types";
 
 export default function CircleButton(props) {
-  const {children, style} = props;
+  const {children, style, onPress} = props;
 
   return (
-  <View  style={[styles.circleButton, style]}>
+  <TouchableOpacity  style={[styles.circleButton, style]} onPress={onPress}>
     <Text style={styles.circleButtonLabel}>{children}</Text>
-  </View>
+  </TouchableOpacity>
   );
 }
 
 CircleButton.propTypes ={
   children:string.isRequired,
   style: shape(),
+  onPress: func,
 };
 
 CircleButton.defaultProps = {
   style: null,
+  onPress: null,
 }
 
 
