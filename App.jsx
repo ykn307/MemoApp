@@ -16,6 +16,8 @@ import SignUpScreen from "./src/screens/SignUpScreen";
 
 import {firebaseConfig} from "./env";
 
+require("firebase/firestore");
+
 const Stack = createStackNavigator();
 
 
